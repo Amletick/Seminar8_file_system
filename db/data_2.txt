@@ -1,0 +1,10 @@
+1;Semen;Semenov;02.02.2002;Tver
+2;Vadim;Voevodin;14.06.2001;Moscow
+3;Ekaterina;Ivanova;25.09.1998;Saint Petersburg
+4;Anna;Petrova;12.12.1995;Nizhny Novgorod
+5;Igor;Sidorov;08.07.2000;Kazan
+6;Marina;Kuznetsova;19.03.1997;Yekaterinburg
+7;Denis;Fedorov;30.11.1994;Rostov-on-Don
+8;Olga;Morozova;03.04.2003;Samara
+9;Alexander;Kozlov;21.08.1999;Ufa
+10;Natalia;Belova;17.05.1996;Volgograd
