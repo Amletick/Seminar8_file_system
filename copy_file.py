@@ -1,5 +1,6 @@
 from choice_file import choice_number_file
 from return_data_file import data_file
+from rows_numeration import fix_row_numbers
 
 def copy_file():
     print("Выберите файл, в который вы хотите скопировать данные")
@@ -30,7 +31,21 @@ def copy_file():
         # Обновляем номер строки в самом файле
         data[-1] = f"{count_rows_new};{';'.join(copy_row.split(';')[1:])}"
 
+        # Спрашиваем пользователя, нужно ли удалить скопированную строку из копируемого файла
+        delete_copy_row = input("Хотите ли вы удалить скопированную строку из исходного файла? (да/нет): ").lower()
+        
+        if delete_copy_row == 'да':
+            # Удаляем скопированную строку из копируемого файла
+            del data_copy[number_row - 1]
+
+            with open(f'db/data_{nf_copy}.txt', 'w', encoding='utf-8') as file_copy:
+                file_copy.writelines(data_copy)
+            # Используем функцию для коррекции номеров строк в копируемом файле
+            fix_row_numbers(f'db/data_{nf_copy}.txt')
+
         with open(f'db/data_{nf}.txt', 'w', encoding='utf-8') as file:
             file.writelines(data)
+        # Используем функцию для коррекции номеров строк в исходном файле
+        fix_row_numbers(f'db/data_{nf}.txt')
         
         print(f"Строка успешно скопирована! Новый номер строки: {count_rows_new}")
