@@ -22,7 +22,7 @@ def check_number(n):
 
 def start_menu():
     command = None
-    while command != 5:
+    while command != 6:
         command = int(input("Доброго времени суток!\n"
                             "Выберите функцию:\n"
                             "1. Добавить\n"
