@@ -1,4 +1,3 @@
-from choice_file import choice_number_file
 from return_data_file import data_file
 from rows_numeration import fix_row_numbers
 
@@ -42,10 +41,11 @@ def copy_file():
                 file_copy.writelines(data_copy)
             # Используем функцию для коррекции номеров строк в копируемом файле
             fix_row_numbers(f'db/data_{nf_copy}.txt')
-
+        
         with open(f'db/data_{nf}.txt', 'w', encoding='utf-8') as file:
             file.writelines(data)
         # Используем функцию для коррекции номеров строк в исходном файле
-        fix_row_numbers(f'db/data_{nf}.txt')
+        # В принципе она не нужна, т.к копирование происходит в последнюю строку, нет смысла проверять нумерацию
+        #fix_row_numbers(f'db/data_{nf}.txt')
         
         print(f"Строка успешно скопирована! Новый номер строки: {count_rows_new}")
